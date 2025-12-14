@@ -29,8 +29,10 @@ button.addEventListener('click',function() {
 document.addEventListener('keydown',function(event) { 
     const tasktext = input.value.trim(); 
     if (tasktext === "") { 
-        alert("Please enter a task before adding it!");
-        return;
+        if (event.key === 'Enter') {
+            alert("Please enter a task before adding it!");
+            return;
+        }
     }
     if (event.key === 'Enter') {
         const li = document.createElement('li');
